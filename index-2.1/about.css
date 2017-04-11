@@ -1,0 +1,640 @@
+@charset "utf-8";
+/*用于指定样式文件的字符编码*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:微软雅黑;
+    /*font-family:sans-serif;*/
+    /*无衬线字体，在Mac中显示为黑体，在windows中显示为微软雅黑，只对Mac和Windows8有效，在windows的其他版本中可能显示为宋体*/
+}
+/* h1, h2, h3 and hr */
+h1,h2,h3 {
+    font-weight: 500;
+    text-align: center;
+}
+h1 {
+    margin: 2em 0 2em;
+    font-size: 1.8em;
+}
+h2 {
+    /*margin: 2em 0 1em;*/
+    margin: 2em 0 0.8em;
+    font-size: 1.5em;
+}
+h3 {
+    margin: 0 0 2em;
+    font-size: 1.2em;
+}
+hr {
+    width: 3%;
+    border:2px solid;
+    margin:0 auto 1em;
+}
+
+
+body{
+    font-size:16px;
+
+}
+/*top*/
+#top{
+    position:fixed;
+    z-index:100;
+    right: 50px;
+    bottom:50px;
+    width:60px;
+    height:60px;
+    background: rgba(82, 82, 82, 0.42);
+    border:1px solid rgba(215, 215, 215, 0.22);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top:25px;
+    font-weight:500;
+    cursor: pointer;
+}
+#top::after{
+    width:0;
+    height:0;
+    content: '';
+    border:8px solid;
+    border-color:transparent transparent #fff transparent;
+    position: absolute;
+    top:5px;
+    left:50%;
+    margin-left:-8px;
+}
+#top{
+    opacity:0;
+    transition:all 1s ;
+    -webkit-transition:all 1s;
+}
+#top.show{
+    opacity:1;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+@media screen and (min-width: 600px){
+    .logo{
+        display: table-cell;
+        vertical-align: middle;
+        width:16%;
+        float: left;
+    }
+    .logo img{
+        width:60px;
+        height:60px;
+        vertical-align: middle;
+
+    }
+    header{
+        width:100%;
+        position: fixed;
+        z-index: 100;
+        top:0;
+        left:0;
+        background-color: #fff;
+        box-shadow: 0 2px 5px #848484;
+    }
+    nav{
+        width:84%;
+        padding:0;
+    }
+    nav ul{
+        list-style: none;
+        display: table;
+        width:80%;
+        position: relative;
+    }
+    nav ul li{
+        display: table-cell;
+        text-align: center;
+        height: 58px;
+        line-height:58px;
+        font-size: 1em;
+    }
+    nav ul li:last-child{
+        position: absolute;
+        top:2px;
+        right:-150px;
+    }
+
+    nav ul li a{
+        display: inline-block;
+        border-bottom:2px solid transparent;
+        color: #000;
+    }
+    nav ul li a.scrolling{
+        border-bottom:2px solid #000;
+        color:#138FB1;
+    }
+    main{
+        position: relative;
+        top: 60px;
+        margin:0 auto;
+    }
+
+    #teamReply>div{
+        -webkit-transition: all 1.5s .5s;
+        -moz-transition: all 1.5s .5s ;
+        -o-transition: all 1.5s .5s;
+        transition: all 1.5s .5s;
+    }
+    #teamReply>div.scrolled{
+        box-shadow: 0 0 5px #666;
+    }
+    .reply>div.scrolled{
+        opacity: 1;
+        -webkit-transform:translateX(0) ;
+        -moz-transform:translateX(0) ;
+        -ms-transform:translateX(0) ;
+        -o-transform: translateX(0);
+        transform:translateX(0) ;
+    }
+    .replyimg{
+        opacity:0;
+        -webkit-transform: translateX(-100px);
+        -moz-transform:translateX(-100px) ;
+        -ms-transform:translateX(-100px) ;
+        -o-transform: translateX(-100px);
+        transform: translateX(-100px);
+        -webkit-transition: all 1.5s .25s;
+        -moz-transition: all 1.5s .25s ;
+        -o-transition: all 1.5s .25s;
+        transition: all 1.5s .25s;
+    }
+    .replys{
+        opacity:0;
+        -webkit-transform: translateX(100px);
+        -moz-transform:translateX(100px) ;
+        -ms-transform:translateX(100px) ;
+        -o-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-transition: all 1.5s .25s;
+        transition: all 1.5s .25s;
+    }
+}
+
+#teamHistory,#teamRule,#teamReply,#teamPlay{
+    width:72%;
+    margin:0 auto;
+}
+/*#teamResume{*/
+    /*width:100%;*/
+    /*height:400px;*/
+    /*background: url('img/resume.jpg');*/
+    /*-webkit-background-size:cover;*/
+    /*filter: opacity(90%);*/
+    /*background-size:cover;*/
+    /*!*color:#666;*!*/
+    /*color:#000;*/
+    /*text-align: center;*/
+/*}*/
+
+#teamResume{
+    position: relative;
+}
+#teamResume #bgblur{
+    /*position: relative;*/
+    width:100%;
+    height:400px;
+    background: url('img/resume.jpg');
+    -webkit-background-size:cover;
+    background-size:cover;
+    -webkit-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+}
+#teamResume h1{
+    position: absolute;
+    z-index:2;
+    top:0;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform:translateX(-50%);
+    font-size:4em;
+    font-weight:400;
+    font-family:Georgia,"Times New Roman",Serif;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+}
+#teamResume p{
+    position: absolute;
+    z-index:2;
+    top:60%;
+    left:10%;
+    width:85%;
+    text-align: center;
+    line-height: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+#teamResume h1,#teamResume p{
+    opacity: 0;
+    -webkit-transition: all 2s .5s;
+    transition: all 2s .5s;
+}
+#teamResume h1.show,#teamResume  p.show{
+    opacity: .8;
+}
+
+/*发展历史*/
+/*如果不设置高度，则链接不会自动到该位置*/
+#teamHistory{
+    height:450px;
+}
+.tabs .tabNav{
+    list-style-type:none;
+    display: table;
+    width:100%;
+    margin-bottom: 2em;
+}
+.tabNav li{
+    display: table-cell;
+}
+
+ .tabNav li a{
+    color: #000;
+}
+ .tabNav li a.show{
+     color: #138FB1;
+ }
+.tabPane{
+    display: table-row;
+    /*height:380px;*/
+}
+.img,.info{
+    display: table-cell;
+    vertical-align: middle;
+
+}
+.img{
+    width:40%;
+}
+.img img{
+    width:100%;
+}
+#tab-4 .img,#tab-6 .img{
+    text-align: center;
+}
+#tab-4 .img img,#tab-6 .img img{
+    width: 60%;
+}
+.info{
+    width:60%;
+    text-align: left;
+    padding-left: 2%;
+}
+.info h2{
+    margin: 1em 0 1em;
+    float: right;
+}
+.info p{
+    clear: both;
+    text-indent:2em;
+}
+
+/*管理制度*/
+.rule{
+    display: table-row;
+    text-align: left;
+    box-shadow: 0 0 5px #666;
+    border-radius: 4px;
+}
+.rule .ruleimg,.rule .rules{
+    display: table-cell;
+    vertical-align: middle;
+}
+.rule .ruleimg{
+    width:40%;
+}
+.ruleimg img{
+    width:100%;
+}
+#teamRule .rules{
+    width:60%;
+    padding-left:10%;
+    border-left:1px solid #ccc;
+}
+ .rules ul{
+    list-style: none;
+}
+ .rules ul li{
+     line-height:4em;
+ }
+
+ /*项目答辩*/
+#teamReply{
+    text-align: left;
+}
+#teamReply>div{
+    display: table-row;
+}
+
+.replyimg,.replys{
+    display: table-cell;
+    vertical-align: middle;
+}
+.replyimg{
+    width:40%;
+}
+.replyimg img{
+    width:100%;
+    border-radius:4px;
+}
+.replys{
+    width:60%;
+    padding-left:20%;
+}
+.replys ul{
+    list-style: none;
+}
+.replys ul li{
+    line-height:3em;
+}
+.replys ul li span{
+    font-size: 1.6em;
+    display: inline-block;
+    padding:0 .5em;
+    font-weight:600;
+
+}
+.replys .plan{
+    text-indent:15%;
+}
+
+/*不只是代码*/
+#teamPlay .plays  ul{
+    list-style: none;
+    font-size: 0;
+}
+#teamPlay .plays  ul li{
+    display: inline-block;
+    vertical-align: middle;
+}
+ .plays  ul li img{
+     width:100%;
+     padding:2px;
+     border-radius: 4px;
+     border:1px solid #ccc;
+}
+ .plays ul li img:hover{
+     box-shadow: 0 0 2px 1px #ccc;
+ }
+#teamPlay .plays .playSmall{
+    width:20%;
+}
+#teamPlay .plays .playBig{
+    width:30%;
+
+}
+@media only screen and (max-width: 920px) and (min-width:800px) {
+    #teamResume h1{
+        font-size: 3.5em;
+    }
+}
+@media only screen and (max-width: 800px ) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    h3 {
+        font-size: 1em;
+    }
+    #teamResume h1{
+        font-size:2.5em;
+        margin:0;
+        padding: 2em 0 1em;
+    }
+}
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    h3 {
+        font-size: .8em;
+    }
+
+    p, a {
+        font-size: 0.8em;
+    }
+
+    /*导航栏*/
+    header {
+        height: 50px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    #menutoggle {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        color: #aaa;
+        text-indent: 20px;
+        font-size: 1.2em;
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #menutoggle img {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        cursor: pointer;
+    }
+
+    #menutoggle img:hover {
+        box-shadow: 0 0 3px #aaa;
+    }
+
+    nav ul {
+        position: absolute;
+        width: 100%;
+        z-index: 2;
+        background: #eee;
+
+    }
+
+    nav ul li {
+        width: 100%;
+        padding: 5px 0;
+        margin: 5px 0;
+        text-indent: 20px;
+    }
+
+    nav ul li:last-child {
+        border-bottom: 1px solid #ccc;
+    }
+
+    nav ul li:hover {
+        box-shadow: 1px 1px 2px 2px #ddd;
+    }
+
+    nav ul li a {
+        color: #aaa;
+        text-align: left;
+    }
+
+    #teamHistory, #teamRule, #teamReply, #teamPlay {
+        width: 90%;
+    }
+
+    #teamResume {
+        width: 100%;
+        height: 280px;
+        position: relative;
+        background: url('img/resume.jpg');
+        -webkit-background-size: cover;
+        filter: opacity(90%);
+        background-size: cover;
+        /*color:#666;*/
+        color: #000;
+        text-align: center;
+    }
+
+    #teamResume h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 1.5em;
+        font-weight: 400;
+        font-family: Georgia, "Times New Roman", Serif;
+        color: #fff;
+    }
+
+    #teamResume p {
+        position: absolute;
+        width: 90%;
+        top: 310px;
+        left: 5%;
+        line-height: 1.5em;
+        text-align: justify;
+        text-indent: 2em;
+        color: #000;
+    }
+
+    #teamResume h1, #teamResume p {
+        opacity: 0;
+        -webkit-transition: all 2s .5s;
+        transition: all 2s .5s;
+    }
+
+    #teamResume h1.show, #teamResume p.show {
+        opacity: .8;
+    }
+
+    #teamHistory {
+        margin-top: 200px;
+        /*height:550px;*/
+    }
+
+    .tabs .tabNav {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .tabNav li {
+        display: inline-block;
+    }
+
+    .img, .info {
+        display: block;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    .info {
+        width: 100%;
+
+    }
+
+    .info h2 {
+        margin: 1em 0 1em;
+        float: right;
+    }
+
+    .info p {
+        text-indent: 1.6em;
+        line-height: 1.5em;
+    }
+
+    .rule ul li {
+        font-size: 0.8em;
+        line-height: 2em;
+    }
+
+    .replys ul li {
+        font-size: 0.8em;
+        line-height: 2em;
+    }
+
+    #teamReply > div {
+        box-shadow: 0 0 5px #666;
+    }
+}
+
+/* footer */
+footer#footer address {
+    text-align: center;
+    font-style: normal;
+    font-size: .8em;
+    line-height: 1.5em;
+    margin: 1em 0 3em;
+}
+footer#footer address p {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1.2em;
+}
+footer#footer address p img {
+    margin-right: .6em;
+}
+footer#footer div#footer-bottom {
+    background-image: url("../img/index-bottom.png");
+    background-size: cover;
+    width: 100%;
+    height: 6.5em;
+}
+@media only screen and (max-width: 768px) {
+    footer#footer address p {
+        display: flex;
+        margin: 1.5em;
+    }
+}
+
+
+
+
+
+
+
+

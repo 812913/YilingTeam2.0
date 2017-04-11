@@ -1,0 +1,373 @@
+@charset "utf-8";
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 微软雅黑;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+/* h1, h2, h3 and hr */
+h1,h2,h3 {
+    font-weight: 500;
+    text-align: center;
+}
+h1 {
+    margin: 2em 0 2em;
+    font-size: 1.8em;
+}
+h2 {
+    /*margin: 2em 0 1em;*/
+    margin: 2em 0 0.8em;
+    font-size: 1.5em;
+}
+h3 {
+    margin: 0 0 2em;
+    font-size: 1.2em;
+}
+hr {
+    width: 3%;
+    border:2px solid;
+    margin:0 auto 1em;
+}
+@media screen and (min-width: 690px){
+
+    header{
+        height:60px;
+    }
+    .logo{
+        width:7.4%;
+        float: left;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .logo img{
+        vertical-align: middle;
+        height:60px;
+        width:60px;
+    }
+    nav ul{
+        display: -webkit-flex;
+        display:flex;
+        position: relative;
+        width:80%;
+        height:58px;
+        line-height:58px;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+    }
+    nav ul li a,nav span a{
+        display: inline-block;
+        margin:0 1.5em;
+        border-bottom:2px solid transparent;
+        color: #000;
+    }
+
+    nav span a{
+        height:39px;
+    }
+    nav ul li a:hover,nav span a:hover{
+        color:#138FB1;
+        border-bottom:2px solid #000;
+    }
+    nav span a{
+        position: absolute;
+        right:0;
+        top:21px;
+    }
+
+    #slideshow-nav{
+        bottom:20px;
+    }
+
+}
+/*图片轮播*/
+#imgslide{
+    position: relative;
+}
+#slideshow{
+    width:1300px;
+    height:575px!important;
+    overflow: hidden;
+    position: relative;
+    margin:0 auto;
+}
+#slideshow ul,#slideshow ul li{
+    position: absolute;
+    list-style-type:none;
+}
+.simg{
+    width:1200px;
+}
+#slideshow-nav{
+    width:100%;
+    position: absolute;
+    text-align: center;
+}
+#slideshow-nav span{
+    display: inline-block;
+    margin:0 7px;
+    width:15px;
+    height:15px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    font-size:0;
+    background-color: rgba(255,255,255,.3);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /*使得圆点不能被用户所选中*/
+}
+#slideshow-nav span.active{
+    background-color: #fff;
+}
+#teammember{
+    width:82%;
+    margin:0 auto;
+}
+#webresume{
+    width:70%;
+    margin:0 auto;
+    text-indent:2em;
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+@media screen and ( min-width: 900px ){
+    .col{
+        padding-left: 30px;
+
+        -webkit-column-count:3;
+        -webkit-column-gap:10px;
+
+        -moz-column-count:3;
+        -moz-column-gap:10px;
+        -moz-column-fill:auto;
+
+        column-count: 3;
+        column-gap:10px;
+        column-fill: auto;
+        /*表示图片按顺序进行填充*/
+    }
+    figure{
+        width:100%;
+        padding:20px;
+        margin-bottom:20px;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        display: inline-block;
+        /*同时具有块状元素可在一行内显示直至占满，以及块状元素独立显示，不会在现实中换行的特征*/
+        text-align: justify;
+    }
+    figure img{
+        width:100%;
+    }
+
+    figcaption ul li{
+        line-height:1.5em;
+    }
+    figcaption ul li:nth-child(1){
+        font-size: 1.2em;
+        line-height:2em;
+    }
+    figcaption ul li ol{
+        margin-left:3em;
+    }
+    figcaption ul li ol li:nth-child(1){
+        font-size: 1em;
+        line-height:1.5em;
+    }
+
+    #slideshow-nav{
+        bottom:20px;
+    }
+}
+@media screen and (max-width: 979px) {
+    #slideshow, ul, li, img{
+        width:100%;
+    }
+    #slideshow-nav{
+        bottom:50px;
+    }
+}
+figure{
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 4px;
+}
+figure .figimg{
+
+    text-align: center;
+}
+figure .figimg img{
+    width:100%;
+    padding:10px;
+}
+figure figcaption{
+    padding-left:2%;
+}
+
+figcaption ul li{
+    line-height:2em;
+}
+figcaption ul li:nth-child(1){
+    font-size: 1.5em;
+    line-height:2.5em;
+}
+figcaption ul li ol{
+    margin-left:3em;
+}
+figcaption ul li ol li:nth-child(1){
+    font-size: 1em;
+    line-height:1.5em;
+}
+@media screen and (max-width: 899px) and (min-width:600px){
+    #slideshow{
+        height:400px !important;
+    }
+    #slideshow-nav{
+        bottom:70px;
+    }
+    figure{
+        display: table-row;
+    }
+    figure .figimg,figure figcaption{
+        display: table-cell;
+        vertical-align: middle;
+    }
+    figure .figimg{
+        width:45%;
+    }
+    figure figcaption{
+        width:55%;
+    }
+}
+@media only screen and (max-width: 690px){
+    h1 {
+        font-size: 1.2em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    h3 {
+        font-size: .8em;
+    }
+    header{
+        height:50px;
+    }
+    .logo{
+        display: none;
+    }
+    #menutoggle{
+        display: block;
+        position: relative;
+        width:100%;
+        height: 50px;
+        line-height: 50px;
+        color: #aaa;
+        text-indent:20px;
+        font-size: 1.2em;
+        background:#eee;
+        border-bottom:1px solid #ddd;
+    }
+    #menutoggle img{
+        width:25px;
+        height:25px;
+        position: absolute;
+        right:20px;
+        top:15px;
+        cursor: pointer;
+    }
+    #menutoggle img:hover{
+        box-shadow: 0 0 3px #aaa;
+    }
+    nav ul{
+        position: absolute;
+        width:100%;
+        z-index:2;
+        background:#eee;
+
+    }
+    nav ul li{
+        width:100%;
+        padding:5px 0;
+        margin:5px 0;
+        text-indent:20px;
+    }
+
+    nav ul li:last-child{
+        border-bottom:1px solid #ccc;
+    }
+    nav ul li:hover{
+      box-shadow:1px 1px 2px 2px  #ddd;
+    }
+    nav ul li a{
+        color: #aaa;
+        text-align: left;
+    }
+
+    #slideshow-nav{
+        bottom:70px;
+    }
+
+}
+@media screen and ( max-width: 600px ){
+
+    #slideshow{
+        height:250px !important;
+    }
+    #slideshow-nav{
+        bottom:20px;
+    }
+    #teammember{
+        width:70%;
+    }
+
+}
+
+/* footer */
+footer#footer address {
+    text-align: center;
+    font-style: normal;
+    font-size: .8em;
+    line-height: 1.5em;
+    margin: 1em 0 3em;
+}
+footer#footer address p {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1.2em;
+}
+footer#footer address p img {
+    margin-right: .6em;
+}
+footer#footer div#footer-bottom {
+    background-image: url("../img/index-bottom.png");
+    background-size: cover;
+    width: 100%;
+    height: 6.5em;
+}
+@media only screen and (max-width: 768px) {
+    footer#footer address p {
+        display: flex;
+        margin: 1.5em;
+    }
+}
